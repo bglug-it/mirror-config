@@ -18,7 +18,8 @@ Then allow your user to use sudo without passwords:
 
 Then you may use these playbooks as follows:
 
-    $ vim hosts
+    $ vim hosts # change IP address/hostname
+    $ vim init.yml # change bglug with ${your_user}
     $ ansible-playbook init.yml --ask-pass -e "admin_sshkey=/path/to/id_rsa.pub"
     $ ansible-playbook setup.yml 
 
