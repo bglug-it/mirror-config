@@ -1,0 +1,8 @@
+---
+# Task basilari per la prima configurazione
+
+- include: mgmtuser.yml
+  become: yes
+
+- include: basepkg.yml
+  become: yes

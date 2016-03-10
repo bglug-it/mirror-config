@@ -1,0 +1,20 @@
+---
+
+- name: Verifica presenza directory .ssh
+  shell: test -d $HOME/.ssh
+  register: check_sshdir
+  ignore_errors: true
+
+- name: Creazione directory .ssh
+  shell: mkdir -p $HOME/.ssh
+  when: check_sshdir|failed
+
+- name: Verifica chiave ssh
+  shell: test -f $HOME/.ssh/id_rsa
+  changed_when: false
+  ignore_errors: true
+  register: check_key
+
+- name: Gestione creazione chiave ssh
+  shell: ssh-keygen -t rsa -b 1024 -f $HOME/.ssh/id_rsa -N ''
+  when: check_key|failed

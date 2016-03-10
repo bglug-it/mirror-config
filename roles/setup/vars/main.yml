@@ -1,0 +1,8 @@
+---
+addin_pkgs:
+  - git
+  - vim
+  - screen
+  - rsync
+  - logrotate
+  - localepurge

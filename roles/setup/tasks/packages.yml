@@ -1,0 +1,15 @@
+---
+
+- name: Ricarico i repository e aggiorno il sistema.
+  apt:
+    update_cache: yes
+    upgrade: full
+    cache_valid_time: 300
+  become: yes
+
+- name: Installo pacchetti addizionali
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: yes
+  with_items: '{{ addin_pkgs }}'

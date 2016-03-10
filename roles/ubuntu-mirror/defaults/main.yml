@@ -1,0 +1,6 @@
+---
+# Defaults for installation
+host: archive.ubuntu.com
+path: /ubuntu
+shost: security.ubuntu.com
+spath: /ubuntu

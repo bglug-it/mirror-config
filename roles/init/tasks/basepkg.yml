@@ -1,0 +1,4 @@
+---
+
+- name: Installo prerequisiti per Ansible
+  shell: apt-get -y install python-apt aptitude

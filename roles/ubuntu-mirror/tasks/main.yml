@@ -1,0 +1,6 @@
+---
+
+- include: local-mirror.yml
+  tags:
+    - mirror
+    - local-mirror

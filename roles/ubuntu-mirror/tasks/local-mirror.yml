@@ -1,0 +1,28 @@
+---
+# Configurazione del server come repo
+
+- name: Installazione apt-mirror
+  apt:
+    name: apt-mirror
+    state: present
+  become: yes
+
+- name: Installazione configurazione apt-mirror
+  template:
+    src: apt-mirror.list
+    dest: /etc/apt-mirror.list
+  become: yes
+
+- name: Installazione cron per sincronizzazione notturna
+  copy:
+    src: apt-mirror-cron
+    dest: /etc/cron.daily/apt-mirror
+    mode: 0755
+  become: yes
+
+- name: Installazione logrotate per sincronizzazione notturna
+  copy:
+    src: apt-mirror-logrotate
+    dest: /etc/logrotate.d/apt-mirror
+    mode: 0644
+  become: yes

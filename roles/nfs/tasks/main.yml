@@ -1,0 +1,57 @@
+---
+# Configurazione server NFS
+
+- name: Installazione pacchetti specifici per NFS
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - nfs-kernel-server
+    - rpcbind
+  become: yes
+
+- name: Apro configurazione a sistemi remoti
+  lineinfile:
+    regexp: '^NEED_IDMAPD(.*)$'
+    line: 'NEED_IDMAPD=YES'
+    dest: /etc/defaults/nfs-common
+    state: present
+  become: yes
+
+- name: Abilito rpcbind in tcpwrapper
+  lineinfile:
+    dest: /etc/hosts.allow
+    line: "rpcbind: ALL"
+    state: present
+  become: yes
+
+- name: Riavvio il servizio rpcbind
+  service:
+    name: rpcbind
+    state: restarted
+  become: yes
+
+- name: Creo directory per il backup
+  file:
+    path: /var/lib/backups
+    state: directory
+    owner: root
+    group: users
+    mode: 0775
+  become: yes
+
+- name: Configuro nfs
+  copy:
+    src: exports
+    dest: /etc/exports
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+
+- name: Ricarico servizio NFS
+  service:
+    name: nfs-kernel-server
+    state: reloaded
+  become: yes
+

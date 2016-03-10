@@ -1,0 +1,2 @@
+"/var/spool/apt-mirror" *(ro,sync,insecure,no_root_squash,no_subtree_check)
+/var/lib/backups *(rw,sync,no_root_squash,subtree_check)
