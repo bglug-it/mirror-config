@@ -14,7 +14,7 @@
   lineinfile:
     regexp: '^NEED_IDMAPD(.*)$'
     line: 'NEED_IDMAPD=YES'
-    dest: /etc/defaults/nfs-common
+    dest: /etc/default/nfs-common
     state: present
   become: yes
 
