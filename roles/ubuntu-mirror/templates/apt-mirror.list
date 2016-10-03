@@ -77,5 +77,5 @@ clean http://extras.ubuntu.com/ubuntu
 clean http://archive.canonical.com
 clean http://{{ shost }}{{ spath }}
 clean http://ppa.launchpad.net/ansible/ansible/ubuntu
-clean http://ppa.launchpad.net/libreoffice/libreoffice-5-0/ubuntu
+clean http://ppa.launchpad.net/libreoffice/ppa/ubuntu
 clean http://repo.bglug.it/ubuntu
