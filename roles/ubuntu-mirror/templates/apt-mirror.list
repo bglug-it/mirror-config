@@ -67,6 +67,11 @@ deb-i386 http://ppa.launchpad.net/libreoffice/ppa/ubuntu trusty main
 deb-amd64 http://ppa.launchpad.net/libreoffice/ppa/ubuntu trusty main
 deb-src http://ppa.launchpad.net/libreoffice/ppa/ubuntu trusty main
 
+# Epoptes stable
+deb-i386 http://ppa.launchpad.net/epoptes/ppa/ubuntu trusty main
+deb-amd64 http://ppa.launchpad.net/epoptes/ppa/ubuntu trusty main
+deb-src http://ppa.launchpad.net/epoptes/ppa/ubuntu trusty main
+
 # Geogebra 5
 deb-i386 http://www.geogebra.net/linux stable main
 deb-amd64 http://www.geogebra.net/linux stable main
