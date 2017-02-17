@@ -87,5 +87,6 @@ clean http://archive.canonical.com
 clean http://{{ shost }}{{ spath }}
 clean http://ppa.launchpad.net/ansible/ansible/ubuntu
 clean http://ppa.launchpad.net/libreoffice/ppa/ubuntu
+clean http://ppa.launchpad.net/epoptes/ppa/ubuntu
 clean http://www.geogebra.net/linux
 clean http://repo.bglug.it/ubuntu
